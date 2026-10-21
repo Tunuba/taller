@@ -143,6 +143,8 @@
   .atajo { color: #fff; text-decoration: none; font: 800 15px "Baloo 2", Nunito; padding: 6px 14px; border-radius: 20px; margin-right: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.25); white-space: nowrap; }
     .contador { display: none; font: 800 15px "Baloo 2"; opacity: .85; flex: 1; text-align: center; }
   @media (max-width: 560px) { .atajo { font-size: 13px; padding: 5px 9px; margin-right: 4px; } .puntos { display: none; } .contador { display: block; } }
+  .musica { border: none; cursor: pointer; background: rgba(255,255,255,.2); opacity: .75; }
+  .musica[aria-pressed="true"] { background: var(--amarillo); color: #1d1033; opacity: 1; }
   .flecha { width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(255,255,255,.2); color: #fff; font: 800 22px Nunito; cursor: pointer; }
   .progreso { position: fixed; top: 0; left: 0; height: 5px; background: linear-gradient(90deg, var(--amarillo), var(--rosa)); z-index: 10; transition: width .5s; }
   @media (max-width: 700px) { .lamina { justify-content: flex-start; padding-top: 40px; overflow-y: auto; } .hojita { display: none; } }
@@ -439,6 +441,7 @@ si toca la orilla,
   <button class="flecha" id="atras" aria-label="Anterior">&#8249;</button>
   <div class="puntos" id="puntos"></div>
   <span class="contador" id="contador"></span>
+  <button class="atajo musica" id="musica" type="button" aria-pressed="false">Música</button>
   <a class="atajo" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener" style="background:var(--verde)">Generador</a>
   <a class="atajo" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener" style="background:var(--rosa)">Crea su página</a>
   <button class="flecha" id="adelante" aria-label="Siguiente">&#8250;</button>
@@ -475,7 +478,38 @@ addEventListener('keydown', e => {
   if (['ArrowLeft', 'PageUp', 'Backspace'].includes(e.key)) { e.preventDefault(); ir(actual - 1); }
   if (e.key === 'f' || e.key === 'F') document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
   if (e.key === 'Home') ir(0);
+  if (e.key === 'm' || e.key === 'M') musica();
 });
+
+// musica de fondo, bajita y en bucle sin costura; empieza apagada y se prende con el boton o la M
+let audio = null, sonando = false;
+async function musica() {
+  const b = document.getElementById('musica');
+  b.blur();                                  // si no, la barra espaciadora la volveria a tocar
+  sonando = !sonando;
+  b.setAttribute('aria-pressed', sonando);
+  try {
+    if (!audio) {
+      const ctx = new AudioContext(), vol = ctx.createGain();
+      vol.gain.value = 0;
+      vol.connect(ctx.destination);
+      audio = { ctx, vol };
+      const datos = await (await fetch('musica.wav')).arrayBuffer();
+      const fuente = ctx.createBufferSource();
+      fuente.buffer = await ctx.decodeAudioData(datos);
+      fuente.loop = true;
+      fuente.connect(vol);
+      fuente.start();
+    }
+    const { ctx, vol } = audio, t = ctx.currentTime;
+    if (sonando) await ctx.resume();
+    vol.gain.cancelScheduledValues(t);
+    vol.gain.setValueAtTime(vol.gain.value, t);
+    vol.gain.linearRampToValueAtTime(sonando ? 0.35 : 0, t + 1.2);
+    if (!sonando) setTimeout(() => { if (!sonando) ctx.suspend(); }, 1300);
+  } catch (e) { sonando = false; b.setAttribute('aria-pressed', false); }
+}
+document.getElementById('musica').onclick = musica;
 // en la lamina de las tres cosas, avanzar enciende la siguiente capa antes de pasar
 let nivel = 0;
 function avanzar() {
