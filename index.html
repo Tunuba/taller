@@ -151,7 +151,7 @@
 <body>
 <div class="progreso" id="progreso"></div>
 
-<!-- 1 PORTADA -->
+<!-- PORTADA -->
 <section class="lamina fondo-a">
   <span class="forma" style="width:260px;height:260px;background:var(--amarillo);left:-60px;bottom:-40px"></span>
   <span class="forma" style="width:180px;height:180px;background:var(--menta);right:6%;top:8%;animation-delay:-4s"></span>
@@ -161,81 +161,46 @@
   <p class="chico entra" style="--i:2">Prof. José González</p>
 </section>
 
-<!-- 2 PREGUNTA -->
+<!-- PREGUNTA -->
 <section class="lamina fondo-b">
   <h2 class="entra" style="--i:0">¿Cuánto tiempo se le va haciendo un examen, su clave y su temario?</h2>
   <div class="reloj entra" style="--i:1" id="reloj">3 horas<small>cada examen, cada grado, cada bloque</small></div>
 </section>
 
-<!-- 3 HOY -->
+<!-- HOY -->
 <section class="lamina fondo-c">
   <h2 class="entra" style="--i:0">Hoy van a aprender tres cosas</h2>
   <div class="tarjetas">
-    <div class="tarjeta entra" style="--i:1"><div class="num" style="background:var(--amarillo)">1</div><b>Lo que se puede crear</b><span>Un generador de exámenes hecho con código</span></div>
-    <div class="tarjeta entra" style="--i:2"><div class="num" style="background:var(--menta)">2</div><b>Cómo está hecha una página</b><span>Son solo tres archivos</span></div>
-    <div class="tarjeta entra" style="--i:3"><div class="num" style="background:var(--rosa)">3</div><b>Crear la suya</b><span>Hoy mismo, en su teléfono, con ayuda de la IA</span></div>
+    <div class="tarjeta entra" style="--i:1"><div class="num" style="background:var(--amarillo)">1</div><b>Qué es programar</b><span>Con algo que todos conocen, hacer un pastel</span></div>
+    <div class="tarjeta entra" style="--i:2"><div class="num" style="background:var(--menta)">2</div><b>Crear su página</b><span>Con HTML, CSS y JavaScript, en su teléfono y con ayuda de la IA</span></div>
+    <div class="tarjeta entra" style="--i:3"><div class="num" style="background:var(--rosa)">3</div><b>Un generador de exámenes</b><span>Hecho con código, listo para usarlo</span></div>
   </div>
 </section>
 
-<!-- 4 GENERADOR -->
-<section class="lamina fondo-d">
-  <p class="etiqueta entra" style="--i:0">Primero, miren lo que se puede crear</p>
-  <h2 class="entra" style="--i:1">Un generador de exámenes</h2>
-  <p class="grande entra" style="--i:2">Usted pega el texto de su clase y la página le arma el examen sola</p>
-  <div class="dos">
-    <div class="entra" style="--i:3"><div class="qr" id="qr-generador"></div></div>
-  </div>
-  <a class="enlace entra" style="--i:4" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener">tunuba.github.io/generador-parciales</a>
-</section>
-
-<!-- 5 COMO FUNCIONA EL GENERADOR -->
-<section class="lamina fondo-d">
-  <h2 class="entra" style="--i:0">Así se usa</h2>
-  <div class="pasos grandes">
-    <div class="paso entra" style="--i:1"><span class="c">1</span><div>Pegue el texto de su clase<small>o suba su Word, su PowerPoint o su PDF</small></div></div>
-    <div class="paso entra" style="--i:2"><span class="c">2</span><div>Elija parcial o examen final<small>el parcial sale en una hoja y el final en dos</small></div></div>
-    <div class="paso entra" style="--i:3"><span class="c">3</span><div>Marque las series que quiere<small>los puntos se reparten solos</small></div></div>
-    <div class="paso entra" style="--i:4"><span class="c">4</span><div>Toque Crear examen<small>y listo para imprimir o bajar en Word</small></div></div>
-  </div>
-</section>
-
-<!-- 6 TRES HOJAS -->
-<section class="lamina fondo-d">
-  <h2 class="entra" style="--i:0">Y salen tres cosas</h2>
-  <div class="trio">
-    <div class="hojita entra" style="--i:1"><em>Examen</em>
-      <i class="t" style="animation-delay:.6s"></i><i style="animation-delay:.7s"></i><i style="animation-delay:.8s;width:80%"></i><i class="t" style="animation-delay:.9s"></i><i style="animation-delay:1s"></i><i style="animation-delay:1.1s;width:60%"></i></div>
-    <div class="hojita entra" style="--i:2"><em>Clave en rojo</em>
-      <i class="t" style="animation-delay:1.2s"></i><i class="r" style="animation-delay:1.3s"></i><i style="animation-delay:1.4s;width:80%"></i><i class="t" style="animation-delay:1.5s"></i><i class="r" style="animation-delay:1.6s"></i><i style="animation-delay:1.7s;width:60%"></i></div>
-    <div class="hojita entra" style="--i:3"><em>Temario</em>
-      <i class="t" style="animation-delay:1.8s;background:#2e7d32"></i><i style="animation-delay:1.9s"></i><i style="animation-delay:2s"></i><i style="animation-delay:2.1s;width:70%"></i><i style="animation-delay:2.2s"></i><i style="animation-delay:2.3s;width:50%"></i></div>
-  </div>
-  <p class="grande entra" style="--i:4">Las respuestas salen revueltas solas, la a, la b, la c y la d</p>
-</section>
-
-<!-- 7 LO QUE HE HECHO -->
-<section class="lamina fondo-e">
-  <h2 class="entra" style="--i:0">Todo esto lo hice con código</h2>
-  <div class="galeria">
-    <div class="obra entra" style="--i:1;background:linear-gradient(135deg,#3d5afe,#3db4ff)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><b>Exámenes y temarios</b><span>Para todos mis grados, con su clave</span></div>
-    <div class="obra entra" style="--i:2;background:linear-gradient(135deg,#ff3d7f,#ff9a3d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="#fff"/></svg><b>Videos animados</b><span>El emblema del colegio en 3D y el video de inscripciones</span></div>
-    <div class="obra entra" style="--i:3;background:linear-gradient(135deg,#8b3dff,#ff3d7f)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg><b>Presentaciones vivas</b><span>Como esta, que se mueve y se ve en el teléfono</span></div>
-    <div class="obra entra" style="--i:4;background:linear-gradient(135deg,#12b886,#3dffb0)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/></svg><b>Juegos y simuladores</b><span>Para practicar robótica sin tener el robot</span></div>
-  </div>
-</section>
-
-<!-- 8 QUE ES PROGRAMAR -->
+<!-- QUE ES PROGRAMAR -->
 <section class="lamina fondo-c">
-  <h2 class="entra" style="--i:0">¿Qué es programar?</h2>
-  <p class="grande entra" style="--i:1">Es darle instrucciones a la computadora, paso por paso, como una receta de cocina</p>
-  <div class="receta entra" style="--i:2">
-    <div><b>Receta</b>1. Ponga agua a hervir<br>2. Eche el café<br>3. Sirva en la taza</div>
+  <p class="etiqueta entra" style="--i:0">Primero, qué es programar</p>
+  <h2 class="entra" style="--i:1">Programar es como hacer un pastel</h2>
+  <p class="grande entra" style="--i:2">Es darle instrucciones a la computadora, paso por paso, como una receta</p>
+  <div class="receta entra" style="--i:3">
+    <div><b>Receta del pastel</b>1. Mezcle harina, huevos y azúcar<br>2. Eche la mezcla al molde<br>3. Hornee media hora<br>4. Si ya está dorado, sáquelo</div>
     <span class="flechita">=</span>
-    <div><b>Programa</b>1. Dibuje una pelota<br>2. Muévala un poquito<br>3. Si toca la orilla, rebote</div>
+    <div><b>Programa</b>1. Dibuje una pelota<br>2. Pinte la pelota de rosado<br>3. Muévala un poquito<br>4. Si toca la orilla, rebote</div>
   </div>
 </section>
 
-<!-- 9 TRES COSAS -->
+<!-- EL ORDEN IMPORTA -->
+<section class="lamina fondo-c">
+  <h2 class="entra" style="--i:0">El orden importa</h2>
+  <div class="receta entra" style="--i:1">
+    <div><b>Bien</b>1. Mezcle<br>2. Eche al molde<br>3. Hornee</div>
+    <span class="flechita">≠</span>
+    <div><b>Revuelto</b>1. Hornee el molde vacío<br>2. Mezcle<br>3. Eche al molde</div>
+  </div>
+  <p class="grande entra" style="--i:2">La computadora hace lo que dice la receta, en ese mismo orden. Si la receta está mal, el pastel sale mal</p>
+</section>
+
+<!-- TRES COSAS -->
 <section class="lamina fondo-e" id="lamina-capas">
   <h2 class="entra" style="--i:0">Una página web son tres cosas</h2>
   <div class="escena entra" style="--i:1" id="escena"><div id="bola">pelota</div></div>
@@ -247,7 +212,7 @@
   <div class="codigo entra" style="--i:3" id="codigo-capa">&lt;div&gt;pelota&lt;/div&gt;</div>
 </section>
 
-<!-- 10 LOS TRES ARCHIVOS -->
+<!-- LOS TRES ARCHIVOS -->
 <section class="lamina fondo-c">
   <h2 class="entra" style="--i:0">Cada cosa va en su archivo</h2>
   <div class="archivos">
@@ -264,7 +229,7 @@ si toca la orilla,
   <p class="grande entra" style="--i:4">No hay que aprenderse esto, la IA lo escribe por usted</p>
 </section>
 
-<!-- 11 LA IA -->
+<!-- LA IA -->
 <section class="lamina fondo-c">
   <h2 class="entra" style="--i:0">¿Y la IA qué hace?</h2>
   <p class="grande entra" style="--i:1">Usted le dice en español lo que quiere y ella escribe los tres archivos</p>
@@ -275,14 +240,14 @@ si toca la orilla,
   <p class="chico entra" style="--i:4">Sirven ChatGPT, Gemini o Meta AI de WhatsApp, las tres son gratis</p>
 </section>
 
-<!-- 12 MANOS A LA OBRA -->
+<!-- MANOS A LA OBRA -->
 <section class="lamina fondo-b">
   <span class="forma" style="width:200px;height:200px;background:var(--amarillo);right:-40px;top:-40px"></span>
   <h1 class="entra" style="--i:0">Manos a la obra</h1>
   <p class="grande entra" style="--i:1">Saquen su teléfono, vamos a crear una página en cinco pasos</p>
 </section>
 
-<!-- 13 PASO 1 -->
+<!-- PASO 1 -->
 <section class="lamina fondo-d">
   <p class="etiqueta entra" style="--i:0">Paso 1 de 5</p>
   <h2 class="entra" style="--i:1">Abra ChatGPT o Gemini</h2>
@@ -294,7 +259,7 @@ si toca la orilla,
   <p class="chico entra" style="--i:5">Cualquiera de las tres sirve</p>
 </section>
 
-<!-- 14 PASO 2 -->
+<!-- PASO 2 -->
 <section class="lamina fondo-c">
   <p class="etiqueta entra" style="--i:0">Paso 2 de 5</p>
   <h2 class="entra" style="--i:1">Escríbale esto</h2>
@@ -302,7 +267,7 @@ si toca la orilla,
   <p class="chico entra" style="--i:3">Puede cambiar la pelota por lo que quiera, un reloj, un dado, una ruleta</p>
 </section>
 
-<!-- 15 PASO 3 -->
+<!-- PASO 3 -->
 <section class="lamina fondo-b">
   <p class="etiqueta entra" style="--i:0">Paso 3 de 5</p>
   <h2 class="entra" style="--i:1">Abra esta página</h2>
@@ -312,7 +277,7 @@ si toca la orilla,
   <a class="enlace entra" style="--i:3" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener">tunuba.github.io/crea</a>
 </section>
 
-<!-- 16 PASO 4 -->
+<!-- PASO 4 -->
 <section class="lamina fondo-e">
   <p class="etiqueta entra" style="--i:0">Paso 4 de 5</p>
   <h2 class="entra" style="--i:1">Copie cada código y péguelo en su caja</h2>
@@ -324,7 +289,7 @@ si toca la orilla,
   <p class="chico entra" style="--i:5">Si pega toda la respuesta junta en una caja, la página la reparte sola</p>
 </section>
 
-<!-- 17 PASO 5 -->
+<!-- PASO 5 -->
 <section class="lamina fondo-a">
   <p class="etiqueta entra" style="--i:0">Paso 5 de 5</p>
   <h2 class="entra" style="--i:1">Mire su página funcionar</h2>
@@ -332,7 +297,7 @@ si toca la orilla,
   <p class="grande entra" style="--i:3">Usted acaba de programar</p>
 </section>
 
-<!-- 18 SI SALE MAL -->
+<!-- SI SALE MAL -->
 <section class="lamina fondo-c">
   <h2 class="entra" style="--i:0">¿No salió como quería? Pídale el cambio</h2>
   <div class="chat">
@@ -343,7 +308,7 @@ si toca la orilla,
   <p class="chico entra" style="--i:4">Copie los códigos nuevos y péguelos otra vez</p>
 </section>
 
-<!-- 19 COMO PEDIR -->
+<!-- COMO PEDIR -->
 <section class="lamina fondo-c">
   <h2 class="entra" style="--i:0">Cómo pedirle bien a la IA</h2>
   <div class="consejos">
@@ -354,7 +319,7 @@ si toca la orilla,
   </div>
 </section>
 
-<!-- 20 IDEAS -->
+<!-- IDEAS -->
 <section class="lamina fondo-f">
   <h2 class="entra" style="--i:0">Ideas para su clase</h2>
   <div class="ideas">
@@ -369,7 +334,54 @@ si toca la orilla,
   </div>
 </section>
 
-<!-- 21 HASTA DONDE -->
+<!-- GENERADOR -->
+<section class="lamina fondo-d">
+  <p class="etiqueta entra" style="--i:0">Por último, lo que se puede crear con código</p>
+  <h2 class="entra" style="--i:1">Un generador de exámenes</h2>
+  <p class="grande entra" style="--i:2">Usted pega el texto de su clase y la página le arma el examen sola</p>
+  <div class="dos">
+    <div class="entra" style="--i:3"><div class="qr" id="qr-generador"></div></div>
+  </div>
+  <a class="enlace entra" style="--i:4" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener">tunuba.github.io/generador-parciales</a>
+</section>
+
+<!-- COMO FUNCIONA EL GENERADOR -->
+<section class="lamina fondo-d">
+  <h2 class="entra" style="--i:0">Así se usa</h2>
+  <div class="pasos grandes">
+    <div class="paso entra" style="--i:1"><span class="c">1</span><div>Pegue el texto de su clase<small>o suba su Word, su PowerPoint o su PDF</small></div></div>
+    <div class="paso entra" style="--i:2"><span class="c">2</span><div>Elija parcial o examen final<small>el parcial sale en una hoja y el final en dos</small></div></div>
+    <div class="paso entra" style="--i:3"><span class="c">3</span><div>Marque las series que quiere<small>los puntos se reparten solos</small></div></div>
+    <div class="paso entra" style="--i:4"><span class="c">4</span><div>Toque Crear examen<small>y listo para imprimir o bajar en Word</small></div></div>
+  </div>
+</section>
+
+<!-- TRES HOJAS -->
+<section class="lamina fondo-d">
+  <h2 class="entra" style="--i:0">Y salen tres cosas</h2>
+  <div class="trio">
+    <div class="hojita entra" style="--i:1"><em>Examen</em>
+      <i class="t" style="animation-delay:.6s"></i><i style="animation-delay:.7s"></i><i style="animation-delay:.8s;width:80%"></i><i class="t" style="animation-delay:.9s"></i><i style="animation-delay:1s"></i><i style="animation-delay:1.1s;width:60%"></i></div>
+    <div class="hojita entra" style="--i:2"><em>Clave en rojo</em>
+      <i class="t" style="animation-delay:1.2s"></i><i class="r" style="animation-delay:1.3s"></i><i style="animation-delay:1.4s;width:80%"></i><i class="t" style="animation-delay:1.5s"></i><i class="r" style="animation-delay:1.6s"></i><i style="animation-delay:1.7s;width:60%"></i></div>
+    <div class="hojita entra" style="--i:3"><em>Temario</em>
+      <i class="t" style="animation-delay:1.8s;background:#2e7d32"></i><i style="animation-delay:1.9s"></i><i style="animation-delay:2s"></i><i style="animation-delay:2.1s;width:70%"></i><i style="animation-delay:2.2s"></i><i style="animation-delay:2.3s;width:50%"></i></div>
+  </div>
+  <p class="grande entra" style="--i:4">Las respuestas salen revueltas solas, la a, la b, la c y la d</p>
+</section>
+
+<!-- LO QUE HE HECHO -->
+<section class="lamina fondo-e">
+  <h2 class="entra" style="--i:0">Todo esto lo hice con código</h2>
+  <div class="galeria">
+    <div class="obra entra" style="--i:1;background:linear-gradient(135deg,#3d5afe,#3db4ff)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><b>Exámenes y temarios</b><span>Para todos mis grados, con su clave</span></div>
+    <div class="obra entra" style="--i:2;background:linear-gradient(135deg,#ff3d7f,#ff9a3d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="#fff"/></svg><b>Videos animados</b><span>El emblema del colegio en 3D y el video de inscripciones</span></div>
+    <div class="obra entra" style="--i:3;background:linear-gradient(135deg,#8b3dff,#ff3d7f)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg><b>Presentaciones vivas</b><span>Como esta, que se mueve y se ve en el teléfono</span></div>
+    <div class="obra entra" style="--i:4;background:linear-gradient(135deg,#12b886,#3dffb0)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/></svg><b>Juegos y simuladores</b><span>Para practicar robótica sin tener el robot</span></div>
+  </div>
+</section>
+
+<!-- HASTA DONDE -->
 <section class="lamina fondo-e">
   <h2 class="entra" style="--i:0">Hasta dónde se puede llegar</h2>
   <div class="escalera">
@@ -381,7 +393,7 @@ si toca la orilla,
   </div>
 </section>
 
-<!-- 22 SI YO PUDE -->
+<!-- SI YO PUDE -->
 <section class="lamina fondo-a">
   <span class="forma" style="width:220px;height:220px;background:var(--menta);right:-50px;top:-30px"></span>
   <span class="forma" style="width:160px;height:160px;background:var(--amarillo);left:8%;bottom:10%;animation-delay:-5s"></span>
@@ -389,7 +401,7 @@ si toca la orilla,
   <p class="grande entra" style="--i:1">Y con la IA de ayudante, <span class="resalta">ustedes también pueden</span></p>
 </section>
 
-<!-- 23 CIERRE -->
+<!-- CIERRE -->
 <section class="lamina fondo-a">
   <span class="forma" style="width:240px;height:240px;background:var(--rosa);left:-40px;top:-40px"></span>
   <span class="forma" style="width:200px;height:200px;background:var(--celeste);right:-30px;bottom:-30px;animation-delay:-6s"></span>
