@@ -101,6 +101,9 @@
   .puntos { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; flex: 1; }
   .puntos i { width: 9px; height: 9px; border-radius: 5px; background: rgba(255,255,255,.4); transition: all .3s; cursor: pointer; }
   .puntos i.activo { width: 28px; background: #fff; }
+  .atajo { color: #fff; text-decoration: none; font: 800 15px "Baloo 2", Nunito; padding: 6px 14px; border-radius: 20px; margin-right: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.25); white-space: nowrap; }
+    .contador { display: none; font: 800 15px "Baloo 2"; opacity: .85; flex: 1; text-align: center; }
+  @media (max-width: 560px) { .atajo { font-size: 13px; padding: 5px 9px; margin-right: 4px; } .puntos { display: none; } .contador { display: block; } }
   .flecha { width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(255,255,255,.2); color: #fff; font: 800 22px Nunito; cursor: pointer; }
   .progreso { position: fixed; top: 0; left: 0; height: 5px; background: linear-gradient(90deg, var(--amarillo), var(--rosa)); z-index: 10; transition: width .5s; }
   @media (max-width: 700px) { .lamina { justify-content: flex-start; padding-top: 40px; overflow-y: auto; } .hojita { display: none; } }
@@ -249,14 +252,17 @@
   <h1 class="entra" style="--i:0">Gracias</h1>
   <p class="grande entra" style="--i:1">La tecnología no reemplaza al maestro, <span class="resalta">le devuelve su tiempo</span></p>
   <div class="dos">
-    <div class="entra" style="--i:2"><div class="qr" id="qr-generador-2"></div><br><span class="enlace">Generador de parciales</span></div>
-    <div class="entra" style="--i:3"><div class="qr" id="qr-crea-2"></div><br><span class="enlace">Crea con IA</span></div>
+    <div class="entra" style="--i:2"><div class="qr" id="qr-generador-2"></div><br><a class="enlace" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener">Generador de parciales</a></div>
+    <div class="entra" style="--i:3"><div class="qr" id="qr-crea-2"></div><br><a class="enlace" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener">Crea con IA</a></div>
   </div>
 </section>
 
 <nav class="barra">
   <button class="flecha" id="atras" aria-label="Anterior">&#8249;</button>
   <div class="puntos" id="puntos"></div>
+  <span class="contador" id="contador"></span>
+  <a class="atajo" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener" style="background:var(--verde)">Generador</a>
+  <a class="atajo" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener" style="background:var(--rosa)">Crea con IA</a>
   <button class="flecha" id="adelante" aria-label="Siguiente">&#8250;</button>
 </nav>
 
@@ -270,6 +276,7 @@ function ir(n) {
   actual = Math.max(0, Math.min(laminas.length - 1, n));
   laminas.forEach((l, i) => l.classList.toggle('activa', i === actual));
   document.querySelectorAll('#puntos i').forEach((p, i) => p.classList.toggle('activo', i === actual));
+  document.getElementById('contador').textContent = (actual + 1) + ' de ' + laminas.length;
   document.getElementById('progreso').style.width = (100 * (actual + 1) / laminas.length) + '%';
   history.replaceState(null, '', '#' + (actual + 1));
   if (laminas[actual].querySelector('#reloj')) contar();
