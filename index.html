@@ -96,6 +96,45 @@
   .consejo span { font-size: clamp(15px, 1.7vw, 21px); }
   .ejemplo-ped { font-style: italic; opacity: .85; display: block; margin-top: 6px; }
 
+
+  .archivos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: min(1100px, 94vw); margin-top: 24px; }
+  .arch { background: rgba(0,0,0,.28); border-radius: 22px; overflow: hidden; text-align: left; display: flex; flex-direction: column; }
+  .arch b { display: block; padding: 10px 16px; font: 800 clamp(20px, 2.3vw, 30px) "Baloo 2"; color: #fff; }
+  .arch pre { margin: 0; padding: 14px 16px; font: clamp(14px, 1.6vw, 20px)/1.45 Consolas, monospace; color: #fff; flex: 1; white-space: pre-wrap; }
+  .arch span { padding: 0 16px 14px; font-weight: 800; opacity: .9; }
+  .escalera { display: flex; align-items: flex-end; gap: clamp(8px, 1.4vw, 18px); width: min(1150px, 94vw); height: clamp(260px, 52vh, 440px); margin-top: 24px; }
+  .escalon { flex: 1; height: calc(var(--alto) * 17% + 50px); border-radius: 20px 20px 8px 8px; padding: 14px; color: #2a1440; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; }
+  .escalon b { font: 800 clamp(17px, 2.1vw, 28px)/1.05 "Baloo 2"; }
+  .escalon span { font-size: clamp(13px, 1.5vw, 19px); font-weight: 700; }
+  @media (max-width: 700px) { .flechita { display: none; } .archivos { grid-template-columns: 1fr; } .escalera { flex-direction: column; align-items: stretch; height: auto; } .escalon { height: auto; margin-left: calc((5 - var(--alto)) * 6%); } }
+
+  .etiqueta { display: inline-block; background: rgba(255,255,255,.25); border-radius: 30px; padding: 4px 18px; font: 800 clamp(16px, 2vw, 24px) "Baloo 2"; margin: 0 0 10px; }
+  .pasos.grandes { margin-top: 24px; gap: 16px; }
+  .pasos.grandes small { display: block; font: 700 clamp(14px, 1.7vw, 20px) Nunito; opacity: .9; }
+  .trio { display: flex; flex-wrap: wrap; gap: clamp(14px, 3vw, 40px); justify-content: center; margin-top: 26px; }
+  .trio .hojita { transform: none; }
+  .trio .hojita:nth-child(1) { transform: rotate(-4deg); } .trio .hojita:nth-child(3) { transform: rotate(4deg); }
+  .hojita em { display: block; font: 800 clamp(16px, 1.8vw, 22px) "Baloo 2"; font-style: normal; color: #2a1440; margin-bottom: 4px; }
+  .receta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; margin-top: 26px; }
+  .receta > div { background: rgba(255,255,255,.16); border: 2px solid rgba(255,255,255,.35); border-radius: 22px; padding: 18px 24px; text-align: left; font: 700 clamp(17px, 2.2vw, 28px)/1.5 Nunito; }
+  .receta b { display: block; font: 800 clamp(22px, 2.6vw, 34px) "Baloo 2"; color: var(--amarillo); }
+  .flechita { font: 800 60px "Baloo 2"; }
+  .chat { display: flex; flex-direction: column; gap: 12px; width: min(820px, 92vw); margin-top: 22px; }
+  .globo { border-radius: 24px; padding: 14px 22px; font: 700 clamp(17px, 2.3vw, 28px)/1.3 Nunito; max-width: 85%; text-align: left; }
+  .globo.yo { background: #fff; color: #2a1440; align-self: flex-end; border-bottom-right-radius: 6px; }
+  .globo.ia { background: var(--menta); color: #0b3a2a; align-self: flex-start; border-bottom-left-radius: 6px; }
+  .apps { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-top: 26px; }
+  .app { color: #fff; border-radius: 26px; padding: 22px 30px; font: 800 clamp(26px, 3.4vw, 44px) "Baloo 2"; min-width: 220px; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+  .app small { display: block; font: 700 clamp(14px, 1.6vw, 18px) Nunito; opacity: .95; }
+  .prompt { background: #fff; color: #2a1440; border-radius: 26px; padding: clamp(18px, 3vw, 32px); font: 800 clamp(20px, 3vw, 38px)/1.3 Nunito; max-width: 1050px; margin-top: 20px; text-align: left; box-shadow: 0 16px 40px rgba(0,0,0,.3); }
+  .mini-cajas { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 24px; }
+  .mini-cajas > div { border: 4px solid; border-radius: 20px; overflow: hidden; width: clamp(200px, 26vw, 320px); background: rgba(0,0,0,.25); text-align: left; }
+  .mini-cajas b { display: block; color: #fff; padding: 8px 16px; font: 800 clamp(20px, 2.4vw, 30px) "Baloo 2"; }
+  .mini-cajas span { display: block; padding: 18px 16px 28px; font: 700 clamp(15px, 1.8vw, 20px) Consolas, monospace; opacity: .85; }
+  .bola-sola { position: absolute; width: 90px; height: 90px; border-radius: 50%; background: var(--rosa); box-shadow: 0 0 40px var(--rosa); animation: rebote-x 2.6s linear infinite alternate, rebote-y 1.7s ease-in infinite alternate, colores 5s linear infinite; }
+  @keyframes rebote-x { from { left: 2%; } to { left: calc(98% - 90px); } }
+  @keyframes rebote-y { from { top: 4%; } to { top: calc(96% - 90px); } }
+  @keyframes colores { 0% { background: #ff3d7f; } 33% { background: #ffd23d; } 66% { background: #3db4ff; } 100% { background: #ff3d7f; } }
   /* barra de abajo */
   .barra { position: fixed; left: 0; right: 0; bottom: 0; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; z-index: 10; }
   .puntos { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; flex: 1; }
@@ -130,57 +169,53 @@
 
 <!-- 3 HOY -->
 <section class="lamina fondo-c">
-  <h2 class="entra" style="--i:0">Lo que vamos a ver hoy</h2>
+  <h2 class="entra" style="--i:0">Hoy van a aprender tres cosas</h2>
   <div class="tarjetas">
-    <div class="tarjeta entra" style="--i:1"><div class="num" style="background:var(--amarillo)">1</div><b>Un examen en minutos</b><span>Su clase entra, el examen sale</span></div>
-    <div class="tarjeta entra" style="--i:2"><div class="num" style="background:var(--menta)">2</div><b>La IA, su ayudante</b><span>Qué es y cómo pedirle bien</span></div>
-    <div class="tarjeta entra" style="--i:3"><div class="num" style="background:var(--rosa)">3</div><b>Su propia página</b><span>La van a crear hoy, en su teléfono</span></div>
+    <div class="tarjeta entra" style="--i:1"><div class="num" style="background:var(--amarillo)">1</div><b>Lo que se puede crear</b><span>Un generador de exámenes hecho con código</span></div>
+    <div class="tarjeta entra" style="--i:2"><div class="num" style="background:var(--menta)">2</div><b>Cómo está hecha una página</b><span>Son solo tres archivos</span></div>
+    <div class="tarjeta entra" style="--i:3"><div class="num" style="background:var(--rosa)">3</div><b>Crear la suya</b><span>Hoy mismo, en su teléfono, con ayuda de la IA</span></div>
   </div>
 </section>
 
 <!-- 4 GENERADOR -->
 <section class="lamina fondo-d">
-  <h2 class="entra" style="--i:0">Pegue su clase y salen tres cosas</h2>
+  <p class="etiqueta entra" style="--i:0">Primero, miren lo que se puede crear</p>
+  <h2 class="entra" style="--i:1">Un generador de exámenes</h2>
+  <p class="grande entra" style="--i:2">Usted pega el texto de su clase y la página le arma el examen sola</p>
   <div class="dos">
-    <div class="pasos">
-      <div class="paso entra" style="--i:1"><span class="c">1</span>Pegue el texto de su clase</div>
-      <div class="paso entra" style="--i:2"><span class="c">2</span>Elija series y puntos</div>
-      <div class="paso entra" style="--i:3"><span class="c">3</span>Examen, resuelto y temario</div>
-    </div>
-    <div class="hojita entra" style="--i:2">
-      <i class="t" style="animation-delay:.6s"></i><i style="animation-delay:.75s"></i><i style="animation-delay:.9s;width:80%"></i>
-      <i class="t" style="animation-delay:1.1s"></i><i style="animation-delay:1.25s"></i><i class="r" style="animation-delay:1.4s"></i><i style="animation-delay:1.55s"></i>
-      <i class="t" style="animation-delay:1.75s"></i><i style="animation-delay:1.9s"></i><i style="animation-delay:2.05s;width:70%"></i><i class="r" style="animation-delay:2.2s"></i>
-    </div>
-    <div class="entra" style="--i:4"><div class="qr" id="qr-generador"></div></div>
+    <div class="entra" style="--i:3"><div class="qr" id="qr-generador"></div></div>
   </div>
-  <a class="enlace entra" style="--i:5" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener">tunuba.github.io/generador-parciales</a>
+  <a class="enlace entra" style="--i:4" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener">tunuba.github.io/generador-parciales</a>
 </section>
 
-<!-- 5 BASICO O IA -->
-<section class="lamina fondo-e">
-  <h2 class="entra" style="--i:0">Dos formas de armarlo</h2>
-  <div class="columnas">
-    <div class="col entra" style="--i:1;background:linear-gradient(135deg,#12b886,#0b7a59)"><b>Básico</b><ul><li>Sale al instante</li><li>Sin internet y sin cuentas</li><li>Saca las preguntas de su texto</li></ul></div>
-    <div class="col entra" style="--i:2;background:linear-gradient(135deg,#8b3dff,#ff3d7f)"><b>Con IA</b><ul><li>Preguntas de razonar y de casos</li><li>Más flexible con cualquier tema</li><li>Se conecta la IA que usted quiera</li></ul></div>
+<!-- 5 COMO FUNCIONA EL GENERADOR -->
+<section class="lamina fondo-d">
+  <h2 class="entra" style="--i:0">Así se usa</h2>
+  <div class="pasos grandes">
+    <div class="paso entra" style="--i:1"><span class="c">1</span><div>Pegue el texto de su clase<small>o suba su Word, su PowerPoint o su PDF</small></div></div>
+    <div class="paso entra" style="--i:2"><span class="c">2</span><div>Elija parcial o examen final<small>el parcial sale en una hoja y el final en dos</small></div></div>
+    <div class="paso entra" style="--i:3"><span class="c">3</span><div>Marque las series que quiere<small>los puntos se reparten solos</small></div></div>
+    <div class="paso entra" style="--i:4"><span class="c">4</span><div>Toque Crear examen<small>y listo para imprimir o bajar en Word</small></div></div>
   </div>
-  <div class="regla entra" style="--i:3">La máquina propone, el maestro revisa</div>
 </section>
 
-<!-- 6 QUE ES LA IA -->
-<section class="lamina fondo-c">
-  <h2 class="entra" style="--i:0">¿Qué es la IA?</h2>
-  <p class="grande entra" style="--i:1">Un ayudante que leyó muchísimo. Escribe en segundos lo que a nosotros nos toma horas.</p>
-  <div class="tarjetas">
-    <div class="tarjeta entra" style="--i:2"><div class="num" style="background:var(--menta)">+</div><b>Le ahorra tiempo</b><span>Borradores, ideas, preguntas, ejemplos</span></div>
-    <div class="tarjeta entra" style="--i:3"><div class="num" style="background:var(--rosa)">!</div><b>Se puede equivocar</b><span>Por eso usted siempre revisa</span></div>
-    <div class="tarjeta entra" style="--i:4"><div class="num" style="background:var(--amarillo)">?</div><b>Entiende su idioma</b><span>Se le pide como a una persona</span></div>
+<!-- 6 TRES HOJAS -->
+<section class="lamina fondo-d">
+  <h2 class="entra" style="--i:0">Y salen tres cosas</h2>
+  <div class="trio">
+    <div class="hojita entra" style="--i:1"><em>Examen</em>
+      <i class="t" style="animation-delay:.6s"></i><i style="animation-delay:.7s"></i><i style="animation-delay:.8s;width:80%"></i><i class="t" style="animation-delay:.9s"></i><i style="animation-delay:1s"></i><i style="animation-delay:1.1s;width:60%"></i></div>
+    <div class="hojita entra" style="--i:2"><em>Clave en rojo</em>
+      <i class="t" style="animation-delay:1.2s"></i><i class="r" style="animation-delay:1.3s"></i><i style="animation-delay:1.4s;width:80%"></i><i class="t" style="animation-delay:1.5s"></i><i class="r" style="animation-delay:1.6s"></i><i style="animation-delay:1.7s;width:60%"></i></div>
+    <div class="hojita entra" style="--i:3"><em>Temario</em>
+      <i class="t" style="animation-delay:1.8s;background:#2e7d32"></i><i style="animation-delay:1.9s"></i><i style="animation-delay:2s"></i><i style="animation-delay:2.1s;width:70%"></i><i style="animation-delay:2.2s"></i><i style="animation-delay:2.3s;width:50%"></i></div>
   </div>
+  <p class="grande entra" style="--i:4">Las respuestas salen revueltas solas, la a, la b, la c y la d</p>
 </section>
 
 <!-- 7 LO QUE HE HECHO -->
 <section class="lamina fondo-e">
-  <h2 class="entra" style="--i:0">Lo que yo he hecho con esto</h2>
+  <h2 class="entra" style="--i:0">Todo esto lo hice con código</h2>
   <div class="galeria">
     <div class="obra entra" style="--i:1;background:linear-gradient(135deg,#3d5afe,#3db4ff)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><b>Exámenes y temarios</b><span>Para todos mis grados, con su clave</span></div>
     <div class="obra entra" style="--i:2;background:linear-gradient(135deg,#ff3d7f,#ff9a3d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="#fff"/></svg><b>Videos animados</b><span>El emblema del colegio en 3D y el video de inscripciones</span></div>
@@ -189,7 +224,18 @@
   </div>
 </section>
 
-<!-- 8 TRES COSAS -->
+<!-- 8 QUE ES PROGRAMAR -->
+<section class="lamina fondo-c">
+  <h2 class="entra" style="--i:0">¿Qué es programar?</h2>
+  <p class="grande entra" style="--i:1">Es darle instrucciones a la computadora, paso por paso, como una receta de cocina</p>
+  <div class="receta entra" style="--i:2">
+    <div><b>Receta</b>1. Ponga agua a hervir<br>2. Eche el café<br>3. Sirva en la taza</div>
+    <span class="flechita">=</span>
+    <div><b>Programa</b>1. Dibuje una pelota<br>2. Muévala un poquito<br>3. Si toca la orilla, rebote</div>
+  </div>
+</section>
+
+<!-- 9 TRES COSAS -->
 <section class="lamina fondo-e" id="lamina-capas">
   <h2 class="entra" style="--i:0">Una página web son tres cosas</h2>
   <div class="escena entra" style="--i:1" id="escena"><div id="bola">pelota</div></div>
@@ -201,36 +247,114 @@
   <div class="codigo entra" style="--i:3" id="codigo-capa">&lt;div&gt;pelota&lt;/div&gt;</div>
 </section>
 
-<!-- 9 SI YO PUDE -->
-<section class="lamina fondo-a">
-  <span class="forma" style="width:220px;height:220px;background:var(--menta);right:-50px;top:-30px"></span>
-  <span class="forma" style="width:160px;height:160px;background:var(--amarillo);left:8%;bottom:10%;animation-delay:-5s"></span>
-  <h2 class="entra" style="--i:0">Con esas tres cosas<br>hice todo lo que vieron</h2>
-  <p class="grande entra" style="--i:1">Y con la IA de ayudante, <span class="resalta">ustedes también pueden</span></p>
-</section>
-
-<!-- 10 AHORA USTEDES -->
-<section class="lamina fondo-b">
-  <h2 class="entra" style="--i:0">Ahora ustedes</h2>
-  <p class="grande entra" style="--i:1">Escaneen y pídanle a la IA una pelota que rebota</p>
-  <div class="dos">
-    <div class="entra" style="--i:2"><div class="qr" id="qr-crea"></div><br><a class="enlace" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener">tunuba.github.io/crea</a></div>
+<!-- 10 LOS TRES ARCHIVOS -->
+<section class="lamina fondo-c">
+  <h2 class="entra" style="--i:0">Cada cosa va en su archivo</h2>
+  <div class="archivos">
+    <div class="arch entra" style="--i:1"><b style="background:var(--naranja)">clase.html</b><pre>&lt;h1&gt;Hola&lt;/h1&gt;
+&lt;div id="pelota"&gt;&lt;/div&gt;</pre><span>Lo que hay en la página</span></div>
+    <div class="arch entra" style="--i:2"><b style="background:var(--azul)">clase.css</b><pre>#pelota {
+  background: pink;
+  border-radius: 50%;
+}</pre><span>Cómo se ve</span></div>
+    <div class="arch entra" style="--i:3"><b style="background:var(--morado)">clase.js</b><pre>mover(pelota)
+si toca la orilla,
+  rebotar</pre><span>Lo que hace</span></div>
   </div>
-  <p class="chico entra" style="--i:3">Si la IA tiene fila, abran un ejemplo listo y cámbienle los colores</p>
+  <p class="grande entra" style="--i:4">No hay que aprenderse esto, la IA lo escribe por usted</p>
 </section>
 
-<!-- 11 COMO PEDIR -->
+<!-- 11 LA IA -->
+<section class="lamina fondo-c">
+  <h2 class="entra" style="--i:0">¿Y la IA qué hace?</h2>
+  <p class="grande entra" style="--i:1">Usted le dice en español lo que quiere y ella escribe los tres archivos</p>
+  <div class="chat">
+    <div class="globo yo entra" style="--i:2">Hazme una página de una pelota que rebota</div>
+    <div class="globo ia entra" style="--i:3">Claro, aquí están clase.html, clase.css y clase.js</div>
+  </div>
+  <p class="chico entra" style="--i:4">Sirven ChatGPT, Gemini o Meta AI de WhatsApp, las tres son gratis</p>
+</section>
+
+<!-- 12 MANOS A LA OBRA -->
+<section class="lamina fondo-b">
+  <span class="forma" style="width:200px;height:200px;background:var(--amarillo);right:-40px;top:-40px"></span>
+  <h1 class="entra" style="--i:0">Manos a la obra</h1>
+  <p class="grande entra" style="--i:1">Saquen su teléfono, vamos a crear una página en cinco pasos</p>
+</section>
+
+<!-- 13 PASO 1 -->
+<section class="lamina fondo-d">
+  <p class="etiqueta entra" style="--i:0">Paso 1 de 5</p>
+  <h2 class="entra" style="--i:1">Abra ChatGPT o Gemini</h2>
+  <div class="apps">
+    <div class="app entra" style="--i:2;background:#10a37f">ChatGPT<small>chatgpt.com</small></div>
+    <div class="app entra" style="--i:3;background:linear-gradient(135deg,#4285f4,#9b72cb)">Gemini<small>gemini.google.com</small></div>
+    <div class="app entra" style="--i:4;background:#25d366">Meta AI<small>en WhatsApp</small></div>
+  </div>
+  <p class="chico entra" style="--i:5">Cualquiera de las tres sirve</p>
+</section>
+
+<!-- 14 PASO 2 -->
+<section class="lamina fondo-c">
+  <p class="etiqueta entra" style="--i:0">Paso 2 de 5</p>
+  <h2 class="entra" style="--i:1">Escríbale esto</h2>
+  <div class="prompt entra" style="--i:2">Hazme una página web de una pelota que rebota y cambia de color. Dame tres códigos separados, clase.html, clase.css y clase.js</div>
+  <p class="chico entra" style="--i:3">Puede cambiar la pelota por lo que quiera, un reloj, un dado, una ruleta</p>
+</section>
+
+<!-- 15 PASO 3 -->
+<section class="lamina fondo-b">
+  <p class="etiqueta entra" style="--i:0">Paso 3 de 5</p>
+  <h2 class="entra" style="--i:1">Abra esta página</h2>
+  <div class="dos">
+    <div class="entra" style="--i:2"><div class="qr" id="qr-crea"></div></div>
+  </div>
+  <a class="enlace entra" style="--i:3" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener">tunuba.github.io/crea</a>
+</section>
+
+<!-- 16 PASO 4 -->
+<section class="lamina fondo-e">
+  <p class="etiqueta entra" style="--i:0">Paso 4 de 5</p>
+  <h2 class="entra" style="--i:1">Copie cada código y péguelo en su caja</h2>
+  <div class="mini-cajas">
+    <div class="entra" style="--i:2;border-color:var(--naranja)"><b style="background:var(--naranja)">clase.html</b><span>el de clase.html</span></div>
+    <div class="entra" style="--i:3;border-color:var(--azul)"><b style="background:var(--azul)">clase.css</b><span>el de clase.css</span></div>
+    <div class="entra" style="--i:4;border-color:var(--morado)"><b style="background:var(--morado)">clase.js</b><span>el de clase.js</span></div>
+  </div>
+  <p class="chico entra" style="--i:5">Si pega toda la respuesta junta en una caja, la página la reparte sola</p>
+</section>
+
+<!-- 17 PASO 5 -->
+<section class="lamina fondo-a">
+  <p class="etiqueta entra" style="--i:0">Paso 5 de 5</p>
+  <h2 class="entra" style="--i:1">Mire su página funcionar</h2>
+  <div class="escena css entra" style="--i:2" id="escena-final"><div class="bola-sola"></div></div>
+  <p class="grande entra" style="--i:3">Usted acaba de programar</p>
+</section>
+
+<!-- 18 SI SALE MAL -->
+<section class="lamina fondo-c">
+  <h2 class="entra" style="--i:0">¿No salió como quería? Pídale el cambio</h2>
+  <div class="chat">
+    <div class="globo yo entra" style="--i:1">La pelota no se mueve, arréglalo</div>
+    <div class="globo yo entra" style="--i:2">Que sea azul y más rápida</div>
+    <div class="globo yo entra" style="--i:3">Ponle mi nombre arriba en grande</div>
+  </div>
+  <p class="chico entra" style="--i:4">Copie los códigos nuevos y péguelos otra vez</p>
+</section>
+
+<!-- 19 COMO PEDIR -->
 <section class="lamina fondo-c">
   <h2 class="entra" style="--i:0">Cómo pedirle bien a la IA</h2>
   <div class="consejos">
-    <div class="consejo entra" style="--i:1"><b>Diga qué y para quién</b><span>Un juego de sumas para niños de segundo primaria<span class="ejemplo-ped">mejor que un juego</span></span></div>
+    <div class="consejo entra" style="--i:1"><b>Diga qué y para quién</b><span>Un juego de sumas para niños de segundo primaria<span class="ejemplo-ped">mejor que solo un juego</span></span></div>
     <div class="consejo entra" style="--i:2"><b>Pida de a poquito</b><span>Primero que funcione, después los colores y los sonidos</span></div>
-    <div class="consejo entra" style="--i:3"><b>Si sale mal, dígalo</b><span>La pelota no rebota abajo, arréglelo</span></div>
+    <div class="consejo entra" style="--i:3"><b>Si sale mal, dígalo</b><span>La pelota no rebota abajo, arréglalo</span></div>
     <div class="consejo entra" style="--i:4"><b>Revise siempre</b><span>Usted es el maestro, la IA es el ayudante</span></div>
   </div>
 </section>
 
-<!-- 12 IDEAS -->
+<!-- 20 IDEAS -->
 <section class="lamina fondo-f">
   <h2 class="entra" style="--i:0">Ideas para su clase</h2>
   <div class="ideas">
@@ -245,7 +369,27 @@
   </div>
 </section>
 
-<!-- 13 CIERRE -->
+<!-- 21 HASTA DONDE -->
+<section class="lamina fondo-e">
+  <h2 class="entra" style="--i:0">Hasta dónde se puede llegar</h2>
+  <div class="escalera">
+    <div class="escalon entra" style="--i:1;background:var(--menta);--alto:1"><b>Hoy</b><span>Una pelota que rebota</span></div>
+    <div class="escalon entra" style="--i:2;background:var(--amarillo);--alto:2"><b>Mañana</b><span>Un juego para su clase</span></div>
+    <div class="escalon entra" style="--i:3;background:var(--naranja);--alto:3"><b>Después</b><span>La página de su materia</span></div>
+    <div class="escalon entra" style="--i:4;background:var(--rosa);--alto:4"><b>Con práctica</b><span>Un generador de exámenes</span></div>
+    <div class="escalon entra" style="--i:5;background:var(--morado);--alto:5"><b>Programación avanzada</b><span>Aplicaciones, robots y simuladores</span></div>
+  </div>
+</section>
+
+<!-- 22 SI YO PUDE -->
+<section class="lamina fondo-a">
+  <span class="forma" style="width:220px;height:220px;background:var(--menta);right:-50px;top:-30px"></span>
+  <span class="forma" style="width:160px;height:160px;background:var(--amarillo);left:8%;bottom:10%;animation-delay:-5s"></span>
+  <h2 class="entra" style="--i:0">Con esas tres cosas<br>hice todo lo que vieron</h2>
+  <p class="grande entra" style="--i:1">Y con la IA de ayudante, <span class="resalta">ustedes también pueden</span></p>
+</section>
+
+<!-- 23 CIERRE -->
 <section class="lamina fondo-a">
   <span class="forma" style="width:240px;height:240px;background:var(--rosa);left:-40px;top:-40px"></span>
   <span class="forma" style="width:200px;height:200px;background:var(--celeste);right:-30px;bottom:-30px;animation-delay:-6s"></span>
@@ -253,7 +397,7 @@
   <p class="grande entra" style="--i:1">La tecnología no reemplaza al maestro, <span class="resalta">le devuelve su tiempo</span></p>
   <div class="dos">
     <div class="entra" style="--i:2"><div class="qr" id="qr-generador-2"></div><br><a class="enlace" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener">Generador de parciales</a></div>
-    <div class="entra" style="--i:3"><div class="qr" id="qr-crea-2"></div><br><a class="enlace" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener">Crea con IA</a></div>
+    <div class="entra" style="--i:3"><div class="qr" id="qr-crea-2"></div><br><a class="enlace" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener">Crea su página</a></div>
   </div>
 </section>
 
@@ -262,7 +406,7 @@
   <div class="puntos" id="puntos"></div>
   <span class="contador" id="contador"></span>
   <a class="atajo" href="https://tunuba.github.io/generador-parciales/" target="_blank" rel="noopener" style="background:var(--verde)">Generador</a>
-  <a class="atajo" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener" style="background:var(--rosa)">Crea con IA</a>
+  <a class="atajo" href="https://tunuba.github.io/crea/" target="_blank" rel="noopener" style="background:var(--rosa)">Crea su página</a>
   <button class="flecha" id="adelante" aria-label="Siguiente">&#8250;</button>
 </nav>
 
@@ -280,7 +424,12 @@ function ir(n) {
   document.getElementById('progreso').style.width = (100 * (actual + 1) / laminas.length) + '%';
   history.replaceState(null, '', '#' + (actual + 1));
   if (laminas[actual].querySelector('#reloj')) contar();
-  if (laminas[actual].id === 'lamina-capas') capa(0);
+  clearTimeout(window.capaTimer1); clearTimeout(window.capaTimer2);
+  if (laminas[actual].id === 'lamina-capas') {
+    capa(0);
+    window.capaTimer1 = setTimeout(() => capa(1), 2800);
+    window.capaTimer2 = setTimeout(() => capa(2), 5600);
+  }
 }
 
 document.getElementById('puntos').innerHTML = laminas.map(() => '<i></i>').join('');
