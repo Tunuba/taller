@@ -135,13 +135,22 @@
   @keyframes rebote-x { from { left: 2%; } to { left: calc(98% - 90px); } }
   @keyframes rebote-y { from { top: 4%; } to { top: calc(96% - 90px); } }
   @keyframes colores { 0% { background: #ff3d7f; } 33% { background: #ffd23d; } 66% { background: #3db4ff; } 100% { background: #ff3d7f; } }
+  /* el robot dibujado a ciegas, se traza solo */
+  .dibujo { background: #fff; color: #2a1440; border-radius: 20px; padding: 10px; box-shadow: 0 16px 40px rgba(0,0,0,.3); display: inline-block; }
+  .robot { display: block; width: clamp(100px, 13vw, 170px); height: auto; overflow: visible; }
+  .robot path { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .lamina.activa .robot path { animation: trazo .45s ease-out forwards; animation-delay: calc(var(--r, 0) * 1.2s + var(--t) * .14s + .7s); }
+  @keyframes trazo { to { stroke-dashoffset: 0; } }
+  .dibujos { display: flex; flex-wrap: wrap; gap: clamp(12px, 2.4vw, 34px); align-items: center; justify-content: center; margin-top: 24px; }
+  .dibujos b { display: block; margin-top: 10px; font: 800 clamp(17px, 2vw, 26px) "Baloo 2"; }
+  .dibujos .flechita { font-size: 44px; }
   /* barra de abajo */
   .barra { position: fixed; left: 0; right: 0; bottom: 0; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; z-index: 10; }
   .puntos { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; flex: 1; }
   .puntos i { width: 9px; height: 9px; border-radius: 5px; background: rgba(255,255,255,.4); transition: all .3s; cursor: pointer; }
   .puntos i.activo { width: 28px; background: #fff; }
   .atajo { color: #fff; text-decoration: none; font: 800 15px "Baloo 2", Nunito; padding: 6px 14px; border-radius: 20px; margin-right: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.25); white-space: nowrap; }
-    .contador { display: none; font: 800 15px "Baloo 2"; opacity: .85; flex: 1; text-align: center; }
+    .contador { display: none; font: 800 15px "Baloo 2"; opacity: .85; flex: 1; text-align: center; white-space: nowrap; }
   @media (max-width: 560px) { .atajo { font-size: 13px; padding: 5px 9px; margin-right: 4px; } .puntos { display: none; } .contador { display: block; } }
   .musica { border: none; cursor: pointer; background: rgba(255,255,255,.2); opacity: .75; }
   .musica[aria-pressed="true"] { background: var(--amarillo); color: #1d1033; opacity: 1; }
@@ -173,55 +182,88 @@
 <section class="lamina fondo-c">
   <h2 class="entra" style="--i:0">Hoy van a aprender tres cosas</h2>
   <div class="tarjetas">
-    <div class="tarjeta entra" style="--i:1"><div class="num" style="background:var(--amarillo)">1</div><b>Qué es programar</b><span>Con algo que todos conocen, hacer un pastel</span></div>
+    <div class="tarjeta entra" style="--i:1"><div class="num" style="background:var(--amarillo)">1</div><b>Trabajar con la IA</b><span>Con un juego, dibujar un robot con los ojos cerrados</span></div>
     <div class="tarjeta entra" style="--i:2"><div class="num" style="background:var(--menta)">2</div><b>Crear su página</b><span>Con HTML, CSS y JavaScript, en su teléfono y con ayuda de la IA</span></div>
     <div class="tarjeta entra" style="--i:3"><div class="num" style="background:var(--rosa)">3</div><b>Un generador de exámenes</b><span>Lo más alto que se puede lograr con código</span></div>
   </div>
 </section>
 
-<!-- LA INSTRUCCION -->
-<section class="lamina fondo-c">
-  <p class="etiqueta entra" style="--i:0">Primero, qué es programar</p>
-  <h2 class="entra" style="--i:1">Programar es dar instrucciones</h2>
-  <p class="grande entra" style="--i:2">Es decirle a la computadora qué hacer, paso por paso, como una receta de cocina</p>
-  <div class="consejos">
-    <div class="consejo entra" style="--i:3"><b>Un paso a la vez</b><span>Cada renglón es una sola orden, como mezcle o hornee</span></div>
-    <div class="consejo entra" style="--i:4"><b>Del primero al último</b><span>Los pasos van numerados, en el orden en que se hacen</span></div>
-  </div>
-</section>
-
-<!-- EN SU CUADERNO -->
+<!-- A CIEGAS -->
 <section class="lamina fondo-b">
-  <p class="etiqueta entra" style="--i:0">Ahora usted</p>
-  <h2 class="entra" style="--i:1">En su cuaderno, escriba cómo se hace un pastel</h2>
-  <p class="grande entra" style="--i:2">Paso por paso, un paso en cada renglón, del primero al último</p>
-  <div class="receta entra" style="--i:3"><div><b>Así empieza</b>1. ...<br>2. ...<br>3. ...</div></div>
-  <p class="chico entra" style="--i:4">Al terminar, algunos la leen en voz alta</p>
+  <p class="etiqueta entra" style="--i:0">Primero, un juego</p>
+  <h2 class="entra" style="--i:1">Cierre los ojos y dibuje un robot</h2>
+  <div class="dos">
+    <div class="pasos grandes">
+      <div class="paso entra" style="--i:2"><span class="c">1</span><div>Tome una hoja y un lápiz</div></div>
+      <div class="paso entra" style="--i:3"><span class="c">2</span><div>Cierre los ojos</div></div>
+      <div class="paso entra" style="--i:4"><span class="c">3</span><div>Dibuje un robot<small>con cabeza, ojos, cuerpo, brazos y piernas</small></div></div>
+    </div>
+    <div class="dibujo entra" style="--i:5"><svg class="robot" data-v="1" viewBox="-20 -20 160 190"></svg></div>
+  </div>
+  <p class="chico entra" style="--i:6">No se vale abrir los ojos</p>
 </section>
 
-<!-- QUE ES PROGRAMAR -->
+<!-- PASARLO -->
 <section class="lamina fondo-c">
-  <p class="etiqueta entra" style="--i:0">¿Se parece a la suya?</p>
-  <h2 class="entra" style="--i:1">Programar es como hacer un pastel</h2>
-  <p class="grande entra" style="--i:2">Es darle instrucciones a la computadora, paso por paso, como una receta</p>
-  <div class="receta entra" style="--i:3">
-    <div><b>Receta del pastel</b>1. Mezcle harina, huevos y azúcar<br>2. Eche la mezcla al molde<br>3. Hornee media hora<br>4. Si ya está dorado, sáquelo</div>
-    <span class="flechita">=</span>
-    <div><b>Programa</b>1. Dibuje una pelota<br>2. Pinte la pelota de rosado<br>3. Muévala un poquito<br>4. Si toca la orilla, rebote</div>
+  <p class="etiqueta entra" style="--i:0">Todavía con los ojos cerrados</p>
+  <h2 class="entra" style="--i:1">Pásele su dibujo al compañero de adelante</h2>
+  <div class="pasos grandes">
+    <div class="paso entra" style="--i:2"><span class="c">1</span><div>Dígale cada trazo que hizo<small>uno por uno, del primero al último</small></div></div>
+    <div class="paso entra" style="--i:3"><span class="c">2</span><div>Su compañero lo dibuja otra vez<small>solo con lo que usted le dice</small></div></div>
+  </div>
+  <div class="chat">
+    <div class="globo yo entra" style="--i:4">Primero hice una cabeza cuadrada con una antena</div>
+    <div class="globo yo entra" style="--i:5">Abajo un cuerpo grande y dos brazos</div>
   </div>
 </section>
 
-<!-- EL ORDEN IMPORTA -->
+<!-- ABRAN LOS OJOS -->
+<section class="lamina fondo-a">
+  <p class="etiqueta entra" style="--i:0">Ya pueden mirar</p>
+  <h2 class="entra" style="--i:1">Abran los ojos, ¿se parece?</h2>
+  <div class="dibujos">
+    <div class="entra" style="--i:2"><div class="dibujo"><svg class="robot" data-v="0" viewBox="-20 -20 160 190"></svg></div><b>El que pensó</b></div>
+    <div class="entra" style="--i:3"><div class="dibujo"><svg class="robot" data-v="1" viewBox="-20 -20 160 190" style="--r:1"></svg></div><b>El que dibujó</b></div>
+    <div class="entra" style="--i:4"><div class="dibujo"><svg class="robot" data-v="2" viewBox="-20 -20 160 190" style="--r:2"></svg></div><b>El de su compañero</b></div>
+  </div>
+</section>
+
+<!-- ASI TRABAJA LA IA -->
 <section class="lamina fondo-c">
   <p class="etiqueta entra" style="--i:0">¿Qué quiere decir esto?</p>
-  <h2 class="entra" style="--i:1">El orden importa</h2>
-  <div class="receta entra" style="--i:2">
-    <div><b>Bien</b>1. Mezcle<br>2. Eche al molde<br>3. Hornee</div>
-    <span class="flechita">≠</span>
-    <div><b>Revuelto</b>1. Hornee el molde vacío<br>2. Mezcle<br>3. Eche al molde</div>
+  <h2 class="entra" style="--i:1">Así trabaja la IA, con los ojos cerrados</h2>
+  <p class="grande entra" style="--i:2">Hace justo lo que usted le dijo, aunque no sea lo que quería</p>
+  <div class="consejos">
+    <div class="consejo entra" style="--i:3"><b>Hace lo que usted dice</b><span>No lo que usted pensó</span></div>
+    <div class="consejo entra" style="--i:4"><b>Abra los ojos</b><span>Mire lo que hizo, cada vez</span></div>
+    <div class="consejo entra" style="--i:5"><b>Sepa qué se hizo</b><span>Si no lo revisa, no sabe qué tiene</span></div>
   </div>
-  <p class="grande entra" style="--i:3">La computadora no piensa, hace cada paso tal como está escrito y en ese mismo orden. Si un paso va fuera de lugar, el pastel sale mal</p>
-  <p class="chico entra" style="--i:4">Revise su receta, ¿va en orden?</p>
+</section>
+
+<!-- EL CONTEXTO -->
+<section class="lamina fondo-e">
+  <p class="etiqueta entra" style="--i:0">Y algo más</p>
+  <h2 class="entra" style="--i:1">La IA solo sabe lo que usted le dice</h2>
+  <p class="grande entra" style="--i:2">Su compañero nunca vio su dibujo, solo oyó sus palabras. Cada vez que el trabajo pasa a otro, cambia</p>
+  <div class="dibujos">
+    <div class="entra" style="--i:3"><div class="dibujo"><svg class="robot" data-v="0" viewBox="-20 -20 160 190"></svg></div><b>Usted</b></div>
+    <span class="flechita entra" style="--i:3">&rarr;</span>
+    <div class="entra" style="--i:4"><div class="dibujo"><svg class="robot" data-v="1" viewBox="-20 -20 160 190" style="--r:1"></svg></div><b>Pasó una vez</b></div>
+    <span class="flechita entra" style="--i:4">&rarr;</span>
+    <div class="entra" style="--i:5"><div class="dibujo"><svg class="robot" data-v="2" viewBox="-20 -20 160 190" style="--r:2"></svg></div><b>Pasó dos veces</b></div>
+    <span class="flechita entra" style="--i:5">&rarr;</span>
+    <div class="entra" style="--i:6"><div class="dibujo"><svg class="robot" data-v="3" viewBox="-20 -20 160 190" style="--r:3"></svg></div><b>Pasó tres veces</b></div>
+  </div>
+</section>
+
+<!-- DOS COSAS -->
+<section class="lamina fondo-c">
+  <h2 class="entra" style="--i:0">Dos cosas para siempre</h2>
+  <div class="tarjetas">
+    <div class="tarjeta entra" style="--i:1"><div class="num" style="background:var(--amarillo)">1</div><b>Dígale todo</b><span>La IA solo sabe lo que usted le escribe, dele todos los detalles</span></div>
+    <div class="tarjeta entra" style="--i:2"><div class="num" style="background:var(--menta)">2</div><b>Revise siempre</b><span>Abra los ojos y mire lo que hizo, usted es el maestro</span></div>
+  </div>
+  <p class="grande entra" style="--i:3">Ahora sí, vamos a crear algo con la IA</p>
 </section>
 
 <!-- TRES COSAS -->
@@ -323,7 +365,7 @@ si toca la orilla,
 
 <!-- SI SALE MAL -->
 <section class="lamina fondo-c">
-  <h2 class="entra" style="--i:0">¿No salió como quería? Pídale el cambio</h2>
+  <h2 class="entra" style="--i:0">¿No salió como quería? Revise y pídale el cambio</h2>
   <div class="chat">
     <div class="globo yo entra" style="--i:1">La pelota no se mueve, arréglalo</div>
     <div class="globo yo entra" style="--i:2">Que sea azul y más rápida</div>
@@ -339,7 +381,7 @@ si toca la orilla,
     <div class="consejo entra" style="--i:1"><b>Diga qué y para quién</b><span>Un juego de sumas para niños de segundo primaria<span class="ejemplo-ped">mejor que solo un juego</span></span></div>
     <div class="consejo entra" style="--i:2"><b>Pida de a poquito</b><span>Primero que funcione, después los colores y los sonidos</span></div>
     <div class="consejo entra" style="--i:3"><b>Si sale mal, dígalo</b><span>La pelota no rebota abajo, arréglalo</span></div>
-    <div class="consejo entra" style="--i:4"><b>Revise siempre</b><span>Usted es el maestro, la IA es el ayudante</span></div>
+    <div class="consejo entra" style="--i:4"><b>Revise siempre</b><span>Como en el dibujo, abra los ojos y mire lo que hizo</span></div>
   </div>
 </section>
 
@@ -578,6 +620,25 @@ for (const [id, url] of Object.entries(QRS)) {
   try { new QRCode(document.getElementById(id), { text: url, width: 300, height: 300, colorDark: '#140f22', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M }); }
   catch (e) { document.getElementById(id).textContent = url; }
 }
+// los robots dibujados a ciegas, cada vez que pasa a otro se tuerce mas
+const PARTES = { antena: 'M60 28V14M56 10a4 4 0 1 0 8 0a4 4 0 1 0-8 0', cabeza: 'M32 28h56v40h-56z',
+  ojo1: 'M42 46a5 5 0 1 0 10 0a5 5 0 1 0-10 0', ojo2: 'M68 46a5 5 0 1 0 10 0a5 5 0 1 0-10 0', boca: 'M48 58h24',
+  cuerpo: 'M26 74h68v48h-68z', brazo1: 'M26 84L8 104', brazo2: 'M94 84l18 20', pierna1: 'M44 122v24', pierna2: 'M76 122v24' };
+const TORCIDOS = [{},
+  { antena: 'translate(-12 -2) rotate(18 60 20)', cabeza: 'translate(8 -6) rotate(-8 60 48)', ojo1: 'translate(-16 -12)', ojo2: 'translate(20 4)',
+    boca: 'translate(4 22)', cuerpo: 'translate(-6 4) rotate(6 60 98)', brazo1: 'translate(-2 16)', brazo2: 'translate(4 -18) rotate(-28 103 94)',
+    pierna1: 'translate(-10 -2) rotate(14 44 134)', pierna2: 'translate(4 -6)' },
+  { antena: 'translate(24 30) rotate(70 60 20)', cabeza: 'translate(-4 -10) rotate(14 60 48) scale(1 .7)', ojo1: 'translate(-30 40)', ojo2: 'translate(14 -24)',
+    boca: 'translate(-24 -38) rotate(40 60 58)', cuerpo: 'translate(10 8) rotate(-12 60 98)', brazo1: 'translate(30 -60) rotate(70 17 94)', brazo2: 'translate(-6 30)',
+    pierna1: 'translate(24 -4) rotate(40 44 134)', pierna2: 'translate(-30 4) rotate(-30 76 134)' },
+  { antena: 'translate(-30 100) rotate(140 60 20)', cabeza: 'translate(12 40) rotate(-30 60 48)', ojo1: 'translate(40 60)', ojo2: 'translate(-50 -20)',
+    boca: 'translate(30 -50) rotate(90 60 58)', cuerpo: 'translate(-10 -40) rotate(24 60 98)', brazo1: 'translate(80 -70) rotate(120 17 94)', brazo2: 'translate(-70 20) rotate(60 103 94)',
+    pierna1: 'translate(40 -100) rotate(90 44 134)', pierna2: 'translate(-44 -20) rotate(-70 76 134)' }];
+document.querySelectorAll('.robot').forEach(svg => {
+  const v = TORCIDOS[+svg.dataset.v];
+  svg.innerHTML = Object.entries(PARTES).map(([k, d], i) => '<path d="' + d + '" pathLength="1" style="--t:' + i + '"' + (v[k] ? ' transform="' + v[k] + '"' : '') + '/>').join('');
+});
+
 ir(actual);
 </script>
 </body>
