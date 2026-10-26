@@ -137,9 +137,6 @@
   @keyframes colores { 0% { background: #ff3d7f; } 33% { background: #ffd23d; } 66% { background: #3db4ff; } 100% { background: #ff3d7f; } }
   /* el robot dibujado a ciegas, se traza solo */
   .dibujo { background: #fff; color: #2a1440; border-radius: 20px; padding: 10px; box-shadow: 0 16px 40px rgba(0,0,0,.3); display: inline-block; }
-  .dibujo.paint { padding: 0 0 10px; overflow: hidden; }
-  .dibujo.paint .robot { margin: 0 14px; }
-  .dibujo.paint b { display: block; background: #e8ecf4; padding: 4px 14px; font: 800 15px "Baloo 2"; text-align: left; margin-bottom: 10px; }
   .robot { display: block; width: clamp(100px, 13vw, 170px); height: auto; overflow: visible; }
   .robot path { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
   .lamina.activa .robot path { animation: trazo .45s ease-out forwards; animation-delay: calc(var(--r, 0) * 1.2s + var(--t) * .14s + .7s); }
@@ -197,11 +194,11 @@
   <h2 class="entra" style="--i:1">Cierre los ojos y dibuje un robot</h2>
   <div class="dos">
     <div class="pasos grandes">
-      <div class="paso entra" style="--i:2"><span class="c">1</span><div>Abra Paint en su compu</div></div>
+      <div class="paso entra" style="--i:2"><span class="c">1</span><div>Saque una hoja y un lápiz</div></div>
       <div class="paso entra" style="--i:3"><span class="c">2</span><div>Cierre los ojos</div></div>
-      <div class="paso entra" style="--i:4"><span class="c">3</span><div>Dibuje un robot con el mouse<small>con cabeza, ojos, cuerpo, brazos y piernas</small></div></div>
+      <div class="paso entra" style="--i:4"><span class="c">3</span><div>Dibuje un robot en la hoja<small>con cabeza, ojos, cuerpo, brazos y piernas</small></div></div>
     </div>
-    <div class="dibujo paint entra" style="--i:5"><b>Paint</b><svg class="robot" data-v="1" viewBox="-20 -20 160 190"></svg></div>
+    <div class="dibujo entra" style="--i:5"><svg class="robot" data-v="1" viewBox="-20 -20 160 190"></svg></div>
   </div>
   <p class="chico entra" style="--i:6">No se vale abrir los ojos</p>
 </section>
@@ -212,7 +209,7 @@
   <h2 class="entra" style="--i:1">Dígale a su compañero cómo lo dibujó</h2>
   <div class="pasos grandes">
     <div class="paso entra" style="--i:2"><span class="c">1</span><div>Cada trazo que hizo, uno por uno<small>sin moverse de su lugar</small></div></div>
-    <div class="paso entra" style="--i:3"><span class="c">2</span><div>Su compañero lo dibuja en su Paint<small>solo con lo que usted le dice</small></div></div>
+    <div class="paso entra" style="--i:3"><span class="c">2</span><div>Su compañero lo dibuja en su hoja<small>solo con lo que usted le dice</small></div></div>
   </div>
   <div class="chat">
     <div class="globo yo entra" style="--i:4">Primero hice una cabeza cuadrada con una antena</div>
